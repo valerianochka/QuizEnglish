@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".QuizVocActivity">
+
+
+    <TextView
+        android:id="@+id/v_quiz_title"
+        style="@style/TextTitlePage"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="Название" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_276sdp"
+        android:layout_height="@dimen/_260sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:elevation="@dimen/_10sdp">
+        <LinearLayout
+            android:layout_width="@dimen/_256sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/v_quiz_question_count"
+                style="@style/TextMainDark"
+                android:text="@string/quiz_question_count"/>
+            <TextView
+                android:id="@+id/v_quiz_question"
+                style="@style/TextMainDark"
+                android:layout_width="@dimen/_256sdp"
+                android:layout_height="@dimen/_74sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:background="@drawable/quiz_question"
+                android:text="@string/quiz_question"/>
+            <TextView
+                style="@style/TextAccentDark"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/quiz_translate"/>
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
+                <TextView
+                    android:id="@+id/v_quiz_option1"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:onClick="onClick"
+                    style="@style/QuizAnswer"
+                    android:background="@drawable/quiz_answer"
+                    android:text="@string/quiz_answer"/>
+                <TextView
+                    android:id="@+id/v_quiz_option2"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:onClick="onClick"
+                    style="@style/QuizAnswer"
+                    android:background="@drawable/quiz_answer"
+                    android:text="@string/quiz_answer"/>
+                <TextView
+                    android:id="@+id/v_quiz_option3"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:onClick="onClick"
+                    style="@style/QuizAnswer"
+                    android:background="@drawable/quiz_answer"
+                    android:text="@string/quiz_answer"/>
+                <TextView
+                    android:id="@+id/v_quiz_option4"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:onClick="onClick"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    style="@style/QuizAnswer"
+                    android:background="@drawable/quiz_answer"
+                    android:text="@string/quiz_answer"/>
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btn"
+        style="@style/Btn"
+        android:onClick="onClick"
+        android:text="@string/quiz_btn_next"/>
+
+
+</LinearLayout>

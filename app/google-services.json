@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1021286599553",
+    "project_id": "englishapp-f7d11",
+    "storage_bucket": "englishapp-f7d11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021286599553:android:9650ebea113f481139f680",
+        "android_client_info": {
+          "package_name": "com.example.englishapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021286599553-eke6iu7blmdgajn8t1lc1fjlnfoq9me7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEQfUGgA-ZsWoWyRlqWL4KfvUHHM7znB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021286599553-eke6iu7blmdgajn8t1lc1fjlnfoq9me7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021286599553:android:f100966b90674c5c39f680",
+        "android_client_info": {
+          "package_name": "com.example.quizenglish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021286599553-eke6iu7blmdgajn8t1lc1fjlnfoq9me7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEQfUGgA-ZsWoWyRlqWL4KfvUHHM7znB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021286599553-eke6iu7blmdgajn8t1lc1fjlnfoq9me7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

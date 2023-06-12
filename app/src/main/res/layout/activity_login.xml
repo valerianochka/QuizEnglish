@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+    <TextView
+        style="@style/TextTitle"
+        android:layout_marginStart="0dp"
+        android:gravity="center"
+        android:textSize="@dimen/_20sdp"
+        android:text="@string/login_title"/>
+    <TextView
+        style="@style/TextSubtitle"
+        android:layout_marginStart="0dp"
+        android:gravity="center"
+        android:text="@string/login_subtitle"/>
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/EditText"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:hint="@string/user_email"/>
+    <EditText
+        android:id="@+id/edit_pass"
+        android:inputType="textPassword"
+        style="@style/EditText"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:hint="@string/user_pass" />
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/Btn"
+        android:text="@string/login_btn"/>
+    <LinearLayout
+        android:layout_width="@dimen/_276sdp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp">
+        <TextView
+            style="@style/TextSubtitle"
+            android:layout_width="wrap_content"
+            android:text="@string/login_question"/>
+        <TextView
+            android:onClick="startReg"
+            style="@style/TextSubtitle"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textColor="@color/accent_yellow"
+            android:text="@string/login_question_btn"/>
+    </LinearLayout>
+
+
+</LinearLayout>

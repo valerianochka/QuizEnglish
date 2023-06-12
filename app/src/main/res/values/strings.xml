@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Quiz English</string>
+
+    <!-- АДАПТЕРЫ -->
+    <string name="vocabulary_card_title">Название</string>
+    <string name="vocabulary_card_level">Базовый</string>
+    <string name="vocabulary_card_word">0 cлов</string>
+
+    <string name="course_card_index">1</string>
+    <string name="course_card_title">Название</string>
+    <string name="course_card_description">Описание</string>
+
+    <string name="word_card_ru">Слово</string>
+    <string name="word_card_en">Word</string>
+    <string name="word_card_type">Прилагательное</string>
+    <string name="word_card_description_en">English description</string>
+    <string name="word_card_description_ru">Русское описание</string>
+    <string name="word_card_example">Пример:</string>
+    <string name="word_card_example_ru">Русский пример</string>
+    <string name="word_card_example_en">English example</string>
+
+    <!-- ТЕОРИЯ -->
+    <string name="theory_subtitle">Задания к уроку</string>
+    <string name="theory_btn_lesson">Урок</string>
+    <string name="theory_btn_translation">Перевод</string>
+    <string name="theory_btn_test">Тест</string>
+    <string name="theory_text">Теория</string>
+
+    <!-- ТЕСТИРОВАНИЕ -->
+    <string name="quiz_question_count">Вопрос 1 из 1</string>
+    <string name="quiz_question">Вопрос</string>
+    <string name="quiz_translate">Переведите слово</string>
+    <string name="quiz_answer">Ответ</string>
+    <string name="quiz_btn_next">Продолжить</string>
+
+
+    <!-- ЛОГИН И РЕГИСТРАЦИЯ -->
+    <string name="login_title">Авторизация</string>
+    <string name="login_subtitle">войдите в свой аккаунт</string>
+    <string name="login_btn">Войти в аккаунт</string>
+    <string name="login_question">Нет аккаунта?</string>
+    <string name="login_question_btn">Зарегистрироватся</string>
+
+    <string name="reg_title">Регистрация</string>
+    <string name="reg_subtitle">для регистрация заполните поля</string>
+    <string name="reg_btn">Зарегистрироваться</string>
+    <string name="reg_question">Есть аккаунта?</string>
+    <string name="reg_question_btn">Войти</string>
+
+    <string name="user_name">Имя</string>
+    <string name="user_email">Email</string>
+    <string name="user_pass">Пароль</string>
+    <string name="user_input_pass">Введите пароль</string>
+
+    <!-- НАСТРОЙКИ -->
+    <string name="info">Информация</string>
+    <string name="info_title">Ваши данные</string>
+    <string name="info_user_name">Имя:</string>
+    <string name="info_user_email">Email:</string>
+    <string name="info_user_pass">Пароль:</string>
+    <string name="info_users_title">Инструкция пользователю</string>
+    <string name="info_users_subtitle1">Данное приложение разработано для изучения грамматики и лексики английского языка с элементами игры в процессе обучения.</string>
+    <string name="info_users_subtitle2">Наше приложение совершенно бесплатное и без рекламы, что помогает сфокусироваться на учения языка.</string>
+    <string name="info_users_subtitle3">Выберите тему которую хотите изучить, ознакомтесь с теорией и приступайте к практике! Материал приложения будет обновляться и радовать пользователей.</string>
+    <string name="info_author_title">Об авторе</string>
+    <string name="info_author_fio">Иванова В.А.</string>
+    <string name="info_author_group">РТУ МИРЭА ИКБО-26-21</string>
+    <string name="info_author_date">Год разработки: 2023</string>
+    <string name="info_author_email">Почта для связи: iva3003@bk.ru</string>
+
+
+    <!-- ГЛАВНАЯ -->
+    <string name="main">Главная</string>
+    <string name="main_title">Welcome,</string>
+    <string name="main_subtitle">Новый день – ещё один шаг к цели в изучении английского. Продолжайте идти по плану обучения!</string>
+    <string name="main_vocabulary">Лексика</string>
+    <string name="main_course">Курсы</string>
+
+    <!-- ЛЕКСИКА -->
+    <string name="vocabulary">Лексика</string>
+    <string name="vocabulary_subtitle">Накопление словарного запаса – одна из самых важных задач при изучении нового языка</string>
+    <string name="vocabulary_title">Наборы слов</string>
+    <string name="vocabulary_set1">Набор 1</string>
+    <string name="vocabulary_set1_title">Для новичков</string>
+    <string name="vocabulary_set2">Набор 2</string>
+    <string name="vocabulary_set2_title">Образ жизни</string>
+    <string name="vocabulary_theory">Теория к уроку</string>
+    <string name="vocabulary_btn">Начать тестирование</string>
+
+    <!-- КУРСЫ -->
+    <string name="course">Курсы</string>
+    <string name="course_subtitle">Курсы с пошаговыми тематическими уроками для любого уровня языка</string>
+    <string name="course_title">Выберите уровень</string>
+    <string name="course_card_beginner_title">Beginner</string>
+    <string name="course_card_beginner_subtitle">с нуля</string>
+    <string name="course_card_elementary_title">Elementary</string>
+    <string name="course_card_elementary_subtitle">начинающий</string>
+
+    <string name="course_beginner">Курс Beginner</string>
+    <string name="course_beginner_title">С нуля – Beginner</string>
+    <string name="course_beginner_subtitle">Курс для тех, кто делает первые шаги в изучении английского языка. Строим фундамент английской речи</string>
+    <string name="course_beginner_set1">Глава 1</string>
+    <string name="course_beginner_set1_title">Nice to Meet You</string>
+
+    <string name="course_elementary">Курс Elementary</string>
+    <string name="course_elementary_title">Начинающий – Elementary</string>
+    <string name="course_elementary_subtitle">Курс для тех, у кого уже есть минимальные знания английского языка, но ещё нужно строить базу.</string>
+    <string name="course_elementary_set1">Глава 1</string>
+    <string name="course_elementary_set1_title">Daily Life</string>
+
+    <string name="course_theory">Теория к уроку</string>
+    <string name="course_btn">Начать тестирование</string>
+
+    <!-- РЕЗУЛЬТАТЫ -->
+    <string name="res">Результаты</string>
+    <string name="res_title">Поздравляем!"</string>
+    <string name="res_subtitle1">Вы прошли тест</string>
+    <string name="res_subtitle2">Ваши результаты</string>
+    <string name="res_correct">Правильно</string>
+    <string name="res_total">Всего</string>
+    <string name="res_wrong">Не правильно</string>
+    <string name="res_btn">Вернуться назад</string>
+    <string name="title_activity_quiz_voc">QuizVocActivity</string>
+</resources>

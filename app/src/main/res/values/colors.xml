@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#E0EDFF</color>
+    <color name="purple_500">#E0EDFF</color>
+    <color name="purple_700">#E0EDFF</color>
+    <color name="teal_200">#FF000000</color>
+    <color name="teal_700">#FF000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="text_dark">#3C4B67</color>
+    <color name="text_hint">#7C828F</color>
+    <color name="text_light">#FFFFFF</color>
+    <color name="text_green">#2BA17E</color>
+    <color name="text_red">#AE868A</color>
+    <color name="text_yellow">#FFB861</color>
+
+    <color name="accent_purple">#A795F6</color>
+    <color name="btn_purple">#EEEBFF</color>
+
+    <color name="accent_blue">#3585ED</color>
+    <color name="btn_blue">#E0EDFF</color>
+
+    <color name="accent_green">#2BA17E</color>
+    <color name="btn_green">#DAFBF1</color>
+
+    <color name="accent_red">#AE868A</color>
+    <color name="btn_red">#FDE2E5</color>
+
+    <color name="accent_yellow">#FFB861</color>
+    <color name="btn_yellow">#FFE5C5</color>
+
+    <color name="vocabulary_pink">#E37CF3</color>
+    <color name="vocabulary_purple">#927CF3</color>
+    <color name="course_elementary">#FF7E57</color>
+    <color name="course_beginner">#2BA17E</color>
+
+    <color name="img">#F4EFF8</color>
+    <color name="question_stoke">#765A97</color>
+    <color name="answer_stoke">#3585ED</color>
+</resources>
