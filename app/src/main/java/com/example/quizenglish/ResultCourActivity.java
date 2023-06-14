@@ -6,26 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.quizenglish.databinding.ActivityResultBinding;
+import com.example.quizenglish.databinding.ActivityResultCourBinding;
+import com.example.quizenglish.databinding.ActivityResultVocBinding;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultCourActivity extends AppCompatActivity {
 
-    ActivityResultBinding binding;
+    ActivityResultCourBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_result_cour);
 
         //  Подключение viewBinding
-        binding = ActivityResultBinding.inflate(getLayoutInflater());
+        binding = ActivityResultCourBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        final String vocTitle = getIntent().getStringExtra("vocTitle");
+        final String courTitle = getIntent().getStringExtra("courTitle");
         final int correct = getIntent().getIntExtra("correct",0);
         final int total = getIntent().getIntExtra("total",0);
         final int wrong = getIntent().getIntExtra("wrong",0);
 
-        binding.vResTitle.setText(vocTitle);
+        binding.vResTitle.setText("\"" + courTitle + "\"");
         binding.vResCorrect.setText(String.format("%d",correct));
         binding.vResTotal.setText(String.format("%d",total));
         binding.vResWrong.setText(String.format("%d",wrong));
@@ -33,9 +35,8 @@ public class ResultActivity extends AppCompatActivity {
         binding.btnBackVoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this,VocabularyActivity.class));
+                startActivity(new Intent(ResultCourActivity.this,CourseActivity.class));
             }
         });
-
     }
 }

@@ -9,15 +9,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.quizenglish.R;
-import com.example.quizenglish.TheoryCourElementaryActivity;
+import com.example.quizenglish.TheoryCourPreIntermediateActivity;
 import com.example.quizenglish.models.CourseModel;
 import java.util.ArrayList;
 
-public class CourseElementaryAdapter extends RecyclerView.Adapter<CourseElementaryAdapter.CourseViewHolder>{
+public class CoursePreIntermediateAdapter extends RecyclerView.Adapter<CoursePreIntermediateAdapter.CourseViewHolder>{
     Context context;
     ArrayList<CourseModel> courseModels;
 
-    public CourseElementaryAdapter(Context context, ArrayList<CourseModel> courseModels) {
+    public CoursePreIntermediateAdapter(Context context, ArrayList<CourseModel> courseModels) {
         this.context = context;
         this.courseModels = courseModels;
     }
@@ -40,7 +40,7 @@ public class CourseElementaryAdapter extends RecyclerView.Adapter<CourseElementa
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentTheory = new Intent(context, TheoryCourElementaryActivity.class);
+                Intent intentTheory = new Intent(context, TheoryCourPreIntermediateActivity.class);
                 intentTheory.putExtra("courTitle", model.getCourseTitle());
                 intentTheory.putExtra("courId", model.getCourseId());
                 intentTheory.putExtra("courList", model.getCourseList());

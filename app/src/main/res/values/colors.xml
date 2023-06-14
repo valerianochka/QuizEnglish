@@ -32,8 +32,9 @@
 
     <color name="vocabulary_pink">#E37CF3</color>
     <color name="vocabulary_purple">#927CF3</color>
-    <color name="course_elementary">#FF7E57</color>
     <color name="course_beginner">#2BA17E</color>
+    <color name="course_elementary">#FF7E57</color>
+    <color name="course_elementary_pre_intermediate">#FFB861</color>
 
     <color name="img">#F4EFF8</color>
     <color name="question_stoke">#765A97</color>

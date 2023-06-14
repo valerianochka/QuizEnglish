@@ -12,6 +12,15 @@
         android:theme="@style/Theme.QuizEnglish"
         tools:targetApi="31">
         <activity
+            android:name=".TheoryCourPreIntermediateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoursePreIntermediateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResultCourActivity"
+            android:exported="false" />
+        <activity
             android:name=".QuizCourActivity"
             android:exported="false" />
         <activity
@@ -24,7 +33,7 @@
             android:name=".TheoryCourBeginnerActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultActivity"
+            android:name=".ResultVocActivity"
             android:exported="false" />
         <activity
             android:name=".TheoryVocActivity"
@@ -39,7 +48,7 @@
             android:name=".CourseActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoAppActivity"
+            android:name=".InfoActivity"
             android:exported="false" />
         <activity
             android:name=".VocabularyActivity"

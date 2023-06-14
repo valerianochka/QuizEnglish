@@ -69,6 +69,20 @@ public class QuizCourActivity extends AppCompatActivity {
                         setNextQuestion();
                     }
                 });
+
+        database.collection("courses_pre_intermediate")
+                .document(courId)
+                .collection("questions")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        for(DocumentSnapshot snapshot : value.getDocuments()) {
+                            QuestionModel question = snapshot.toObject(QuestionModel.class);
+                            questions.add(question);
+                        }
+                        setNextQuestion();
+                    }
+                });
     }
 
     // ПЕРЕКЛЮЧЕНИЕ ВОПРОСОВ
@@ -101,17 +115,34 @@ public class QuizCourActivity extends AppCompatActivity {
     }
     // ПОКАЗ ПРАВИЛЬНОГО ОТВЕТА
     void showAnswer() {
-        if(question.getAnswer().equals(binding.vQuizOption1.getText().toString()))
+        if(question.getAnswer().equals(binding.vQuizOption1.getText().toString())){
             binding.vQuizOption1.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption2.getText().toString()))
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        }else if(question.getAnswer().equals(binding.vQuizOption2.getText().toString())){
             binding.vQuizOption2.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption3.getText().toString()))
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        } else if(question.getAnswer().equals(binding.vQuizOption3.getText().toString())){
             binding.vQuizOption3.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption4.getText().toString()))
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        } else if(question.getAnswer().equals(binding.vQuizOption4.getText().toString())){
             binding.vQuizOption4.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+        }
     }
     // ОБНУЛЕНИЕ ФОНОВ
     void reset() {
+        binding.vQuizOption1.setClickable(true);
+        binding.vQuizOption2.setClickable(true);
+        binding.vQuizOption3.setClickable(true);
+        binding.vQuizOption4.setClickable(true);
         binding.vQuizOption1.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
         binding.vQuizOption2.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
         binding.vQuizOption3.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
@@ -129,24 +160,27 @@ public class QuizCourActivity extends AppCompatActivity {
                 checkAnswer(selected);
                 break;
             case R.id.btn:
-                reset();
                 // Если вопросы остались
-                if(index <= questions.size()) {
+                if(index < questions.size()) {
                     // Переход к следующему вопросу
                     index++;
-                    setNextQuestion();
-                }
-                // Если вопросов не осталось
-                else {
-                    // Переход к результату
-                    Intent intent = new Intent(QuizCourActivity.this, ResultActivity.class);
-                    // Передача результатов
-                    final String courTitle = getIntent().getStringExtra("courTitle");
-                    intent.putExtra("title", courTitle);
-                    intent.putExtra("correct", correctAnswers);
-                    intent.putExtra("wrong", wrongAnswers);
-                    intent.putExtra("total", questions.size());
-                    startActivity(intent);
+                    if (index != questions.size()){
+                        reset();
+                        setNextQuestion();
+                    }else {
+                        // Если вопросов не осталось
+                        Intent intent = new Intent(QuizCourActivity.this, ResultCourActivity.class);
+                        // Передача результатов
+                        final String courId = getIntent().getStringExtra("courId");
+                        final String courTitle = getIntent().getStringExtra("courTitle");
+                        intent.putExtra("courId", courId);
+                        intent.putExtra("courTitle", courTitle);
+                        intent.putExtra("correct", correctAnswers);
+                        intent.putExtra("wrong", wrongAnswers);
+                        intent.putExtra("total", questions.size());
+                        startActivity(intent);
+                    }
+                    break;
                 }
                 break;
         }

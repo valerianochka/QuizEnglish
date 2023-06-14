@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
 import android.view.View;
-import com.example.quizenglish.databinding.ActivityInfoAppBinding;
+
+import com.example.quizenglish.databinding.ActivityInfoBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -15,9 +16,9 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class InfoAppActivity extends AppCompatActivity {
+public class InfoActivity extends AppCompatActivity {
 
-    ActivityInfoAppBinding binding;
+    ActivityInfoBinding binding;
     FirebaseFirestore database;
     FirebaseAuth auth;
     String userId;
@@ -27,7 +28,7 @@ public class InfoAppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //  Подключение viewBinding
-        binding = ActivityInfoAppBinding.inflate(getLayoutInflater());
+        binding = ActivityInfoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Получаем экземпляры классов FirebaseFirestore и FirebaseAuth
@@ -48,7 +49,7 @@ public class InfoAppActivity extends AppCompatActivity {
 
     // Намерение перейти из InfoAppActivity в MainActivity
     public void startMain(View view) {
-        startActivity(new Intent(InfoAppActivity.this,MainActivity.class));
+        startActivity(new Intent(InfoActivity.this,MainActivity.class));
     }
 
     // Анимация для cardview

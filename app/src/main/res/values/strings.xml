@@ -33,7 +33,6 @@
     <string name="quiz_answer">Ответ</string>
     <string name="quiz_btn_next">Продолжить</string>
 
-
     <!-- ЛОГИН И РЕГИСТРАЦИЯ -->
     <string name="login_title">Авторизация</string>
     <string name="login_subtitle">войдите в свой аккаунт</string>
@@ -68,7 +67,6 @@
     <string name="info_author_date">Год разработки: 2023</string>
     <string name="info_author_email">Почта для связи: iva3003@bk.ru</string>
 
-
     <!-- ГЛАВНАЯ -->
     <string name="main">Главная</string>
     <string name="main_title">Welcome,</string>
@@ -95,18 +93,26 @@
     <string name="course_card_beginner_subtitle">с нуля</string>
     <string name="course_card_elementary_title">Elementary</string>
     <string name="course_card_elementary_subtitle">начинающий</string>
+    <string name="course_card_pre_intermediate_title">Pre-Intermediate</string>
+    <string name="course_card_pre_intermediate_subtitle">Предсредний</string>
 
-    <string name="course_beginner">Курс Beginner</string>
+    <string name="course_beginner">Beginner</string>
     <string name="course_beginner_title">С нуля – Beginner</string>
     <string name="course_beginner_subtitle">Курс для тех, кто делает первые шаги в изучении английского языка. Строим фундамент английской речи</string>
     <string name="course_beginner_set1">Глава 1</string>
     <string name="course_beginner_set1_title">Nice to Meet You</string>
 
-    <string name="course_elementary">Курс Elementary</string>
+    <string name="course_elementary">Elementary</string>
     <string name="course_elementary_title">Начинающий – Elementary</string>
     <string name="course_elementary_subtitle">Курс для тех, у кого уже есть минимальные знания английского языка, но ещё нужно строить базу.</string>
     <string name="course_elementary_set1">Глава 1</string>
     <string name="course_elementary_set1_title">Daily Life</string>
+
+    <string name="course_pre_intermediate">Pre-Intermediate</string>
+    <string name="course_pre_intermediate_title">Предсредний – Pre-Intermediate</string>
+    <string name="course_pre_intermediate_subtitle">Курс для тех, у кого уже есть минимальные знания английского языка, но ещё нужно строить базу.</string>
+    <string name="course_pre_intermediate_set1">Глава 1</string>
+    <string name="course_pre_intermediate_set1_title">Health</string>
 
     <string name="course_theory">Теория к уроку</string>
     <string name="course_btn">Начать тестирование</string>

@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import com.example.quizenglish.databinding.ActivityQuizVocBinding;
 import com.example.quizenglish.models.QuestionModel;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -16,7 +16,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class QuizVocActivity extends AppCompatActivity {
 
@@ -45,70 +44,33 @@ public class QuizVocActivity extends AppCompatActivity {
         final String vocTitle = getIntent().getStringExtra("vocTitle");
         binding.vQuizTitle.setText(vocTitle);
 
-        Random random = new Random();
-        final int rand = random.nextInt(12);
-
         database.collection("vocabularies_set1")
                 .document(vocId)
                 .collection("questions")
-                .whereGreaterThanOrEqualTo("index", rand)
-                .orderBy("index")
-                .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if(queryDocumentSnapshots.getDocuments().size() < 5) {
-                            database.collection("vocabularies_set1")
-                                    .document(vocId)
-                                    .collection("questions")
-                                    .whereLessThanOrEqualTo("index", rand)
-                                    .orderBy("index")
-                                    .limit(5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                        @Override
-                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                            for(DocumentSnapshot snapshot : queryDocumentSnapshots) {
-                                                QuestionModel question = snapshot.toObject(QuestionModel.class);
-                                                questions.add(question);
-                                            }
-                                            setNextQuestion();
-                                        }
-                                    });
-                        } else {
-                            for(DocumentSnapshot snapshot : queryDocumentSnapshots) {
-                                QuestionModel question = snapshot.toObject(QuestionModel.class);
-                                questions.add(question);
-                            }
-                            setNextQuestion();
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        for(DocumentSnapshot snapshot : value.getDocuments()) {
+                            QuestionModel question = snapshot.toObject(QuestionModel.class);
+                            questions.add(question);
                         }
+                        setNextQuestion();
                     }
                 });
 
-//        database.collection("vocabularies_set1")
-//                .document(vocId)
-//                .collection("questions")
-//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//                        for(DocumentSnapshot snapshot : value.getDocuments()) {
-//                            QuestionModel question = snapshot.toObject(QuestionModel.class);
-//                            questions.add(question);
-//                        }
-//                        setNextQuestion();
-//                    }
-//                });
-//
-//        database.collection("vocabularies_set2")
-//                .document(vocId)
-//                .collection("questions")
-//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//                        for(DocumentSnapshot snapshot : value.getDocuments()) {
-//                            QuestionModel question = snapshot.toObject(QuestionModel.class);
-//                            questions.add(question);
-//                        }
-//                        setNextQuestion();
-//                    }
-//                });
+        database.collection("vocabularies_set2")
+                .document(vocId)
+                .collection("questions")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        for(DocumentSnapshot snapshot : value.getDocuments()) {
+                            QuestionModel question = snapshot.toObject(QuestionModel.class);
+                            questions.add(question);
+                        }
+                        setNextQuestion();
+                    }
+                });
     }
 
     // ПЕРЕКЛЮЧЕНИЕ ВОПРОСОВ
@@ -141,17 +103,34 @@ public class QuizVocActivity extends AppCompatActivity {
     }
     // ПОКАЗ ПРАВИЛЬНОГО ОТВЕТА
     void showAnswer() {
-        if(question.getAnswer().equals(binding.vQuizOption1.getText().toString()))
+        if(question.getAnswer().equals(binding.vQuizOption1.getText().toString())){
             binding.vQuizOption1.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption2.getText().toString()))
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        }else if(question.getAnswer().equals(binding.vQuizOption2.getText().toString())){
             binding.vQuizOption2.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption3.getText().toString()))
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        } else if(question.getAnswer().equals(binding.vQuizOption3.getText().toString())){
             binding.vQuizOption3.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
-        else if(question.getAnswer().equals(binding.vQuizOption4.getText().toString()))
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption4.setClickable(false);
+        } else if(question.getAnswer().equals(binding.vQuizOption4.getText().toString())){
             binding.vQuizOption4.setBackground(getResources().getDrawable(R.drawable.quiz_answer_correct));
+            binding.vQuizOption1.setClickable(false);
+            binding.vQuizOption2.setClickable(false);
+            binding.vQuizOption3.setClickable(false);
+        }
     }
-    // ОБНУЛЕНИЕ ФОНОВ
+    // ОБНУЛЕНИЕ ФОНОВ И КНОПОК
     void reset() {
+        binding.vQuizOption1.setClickable(true);
+        binding.vQuizOption2.setClickable(true);
+        binding.vQuizOption3.setClickable(true);
+        binding.vQuizOption4.setClickable(true);
         binding.vQuizOption1.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
         binding.vQuizOption2.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
         binding.vQuizOption3.setBackground(getResources().getDrawable(R.drawable.quiz_answer));
@@ -169,24 +148,27 @@ public class QuizVocActivity extends AppCompatActivity {
                 checkAnswer(selected);
                 break;
             case R.id.btn:
-                reset();
                 // Если вопросы остались
-                if(index <= questions.size()) {
+                if(index < questions.size()) {
                     // Переход к следующему вопросу
                     index++;
-                    setNextQuestion();
-                }
-                // Если вопросов не осталось
-                else {
-                    // Переход к результату
-                    Intent intent = new Intent(QuizVocActivity.this, ResultActivity.class);
-                    // Передача результатов
-                    final String vocId = getIntent().getStringExtra("vocId");
-//                    intent.putExtra("title", vocId);
-//                    intent.putExtra("correct", correctAnswers);
-//                    intent.putExtra("wrong", wrongAnswers);
-//                    intent.putExtra("total", questions.size());
-                    startActivity(intent);
+                    if (index != questions.size()){
+                        reset();
+                        setNextQuestion();
+                    }else {
+                        // Если вопросов не осталось
+                        Intent intent = new Intent(QuizVocActivity.this, ResultVocActivity.class);
+                        // Передача результатов
+                        final String vocId = getIntent().getStringExtra("vocId");
+                        final String vocTitle = getIntent().getStringExtra("vocTitle");
+                        intent.putExtra("vocId", vocId);
+                        intent.putExtra("vocTitle", vocTitle);
+                        intent.putExtra("correct", correctAnswers);
+                        intent.putExtra("wrong", wrongAnswers);
+                        intent.putExtra("total", questions.size());
+                        startActivity(intent);
+                    }
+                    break;
                 }
                 break;
         }

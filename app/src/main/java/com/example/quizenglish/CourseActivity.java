@@ -35,4 +35,8 @@ public class CourseActivity extends AppCompatActivity {
     public void startElementary(View view) {
         startActivity(new Intent(CourseActivity.this,CourseElementaryActivity.class));
     }
+
+    public void startPreIntermediate(View view) {
+        startActivity(new Intent(CourseActivity.this,CoursePreIntermediateActivity.class));
+    }
 }

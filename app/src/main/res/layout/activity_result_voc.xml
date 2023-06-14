@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ResultActivity">
+    tools:context=".ResultVocActivity">
 
     <TextView
         android:id="@+id/v_quiz_title"
