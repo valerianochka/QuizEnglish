@@ -30,6 +30,7 @@
     <string name="quiz_question_count">Вопрос 1 из 1</string>
     <string name="quiz_question">Вопрос</string>
     <string name="quiz_translate">Переведите слово</string>
+    <string name="quiz_paste">Вставьте пропущенное слово</string>
     <string name="quiz_answer">Ответ</string>
     <string name="quiz_btn_next">Продолжить</string>
 

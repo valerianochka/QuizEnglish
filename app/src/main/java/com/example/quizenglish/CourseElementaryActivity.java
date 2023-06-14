@@ -16,7 +16,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import javax.annotation.Nullable;
 
-
 public class CourseElementaryActivity extends AppCompatActivity {
 
     ActivityCourseElementaryBinding binding;
@@ -33,7 +32,7 @@ public class CourseElementaryActivity extends AppCompatActivity {
         // Получаем экземпляр класса FirebaseFirestore
         database = FirebaseFirestore.getInstance();
 
-        // Создание модели CourseModel и адаптера CourseBeginnerAdapter
+        // Создание модели CourseModel и адаптера CourseElementaryAdapter
         final ArrayList<CourseModel> courses = new ArrayList<>();
         final CourseElementaryAdapter adapter = new CourseElementaryAdapter(CourseElementaryActivity.this, courses);
 

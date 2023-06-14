@@ -2,13 +2,10 @@ package com.example.quizenglish;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.example.quizenglish.databinding.ActivityRegistrationBinding;
 import com.example.quizenglish.models.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;

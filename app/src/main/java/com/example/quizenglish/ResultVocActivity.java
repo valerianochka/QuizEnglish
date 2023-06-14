@@ -1,7 +1,6 @@
 package com.example.quizenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +31,7 @@ public class ResultVocActivity extends AppCompatActivity {
         binding.btnBackVoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Намерение перейти из ResultVocActivity в VocabularyActivity
                 startActivity(new Intent(ResultVocActivity.this,VocabularyActivity.class));
             }
         });

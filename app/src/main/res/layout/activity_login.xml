@@ -54,6 +54,4 @@
             android:textColor="@color/accent_yellow"
             android:text="@string/login_question_btn"/>
     </LinearLayout>
-
-
 </LinearLayout>

@@ -127,7 +127,4 @@
                 android:text="@string/main_course"/>
         </androidx.cardview.widget.CardView>
     </GridLayout>
-
-
-
 </LinearLayout>

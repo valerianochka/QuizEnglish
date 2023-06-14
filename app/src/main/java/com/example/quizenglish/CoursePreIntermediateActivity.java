@@ -2,14 +2,10 @@ package com.example.quizenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import com.example.quizenglish.adapters.CourseElementaryAdapter;
 import com.example.quizenglish.adapters.CoursePreIntermediateAdapter;
-import com.example.quizenglish.databinding.ActivityCourseElementaryBinding;
 import com.example.quizenglish.databinding.ActivityCoursePreIntermediateBinding;
 import com.example.quizenglish.models.CourseModel;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -38,7 +34,7 @@ public class CoursePreIntermediateActivity extends AppCompatActivity {
         // Получаем экземпляр класса FirebaseFirestore
         database = FirebaseFirestore.getInstance();
 
-        // Создание модели CourseModel и адаптера CourseBeginnerAdapter
+        // Создание модели CourseModel и адаптера CoursePreIntermediateAdapter
         final ArrayList<CourseModel> courses = new ArrayList<>();
         final CoursePreIntermediateAdapter adapter = new CoursePreIntermediateAdapter(CoursePreIntermediateActivity.this, courses);
 
@@ -60,7 +56,7 @@ public class CoursePreIntermediateActivity extends AppCompatActivity {
         binding.preIntermediateList1.setAdapter(adapter);
     }
 
-    // Намерение перейти из CourseElementaryActivity в CourseActivity
+    // Намерение перейти из CoursePreIntermediateAdapter в CourseActivity
     public void startCourse(View view) {
         startActivity(new Intent(CoursePreIntermediateActivity.this,CourseActivity.class));
     }

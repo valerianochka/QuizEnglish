@@ -53,4 +53,3 @@ public class VocabularyModel {
         this.vocabularyLevel = vocabularyLevel;
     }
 }
-

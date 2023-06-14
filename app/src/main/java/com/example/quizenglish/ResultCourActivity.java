@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.quizenglish.databinding.ActivityResultCourBinding;
-import com.example.quizenglish.databinding.ActivityResultVocBinding;
+
 
 public class ResultCourActivity extends AppCompatActivity {
 
@@ -35,6 +34,7 @@ public class ResultCourActivity extends AppCompatActivity {
         binding.btnBackVoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Намерение перейти из ResultCourActivity в CourseActivity
                 startActivity(new Intent(ResultCourActivity.this,CourseActivity.class));
             }
         });

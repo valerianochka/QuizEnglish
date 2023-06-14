@@ -58,7 +58,4 @@
             android:textColor="@color/accent_yellow"
             android:text="@string/reg_question_btn"/>
     </LinearLayout>
-
-
-
 </LinearLayout>

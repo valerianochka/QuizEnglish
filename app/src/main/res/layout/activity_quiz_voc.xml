@@ -96,6 +96,4 @@
         style="@style/Btn"
         android:onClick="onClick"
         android:text="@string/quiz_btn_next"/>
-
-
 </LinearLayout>

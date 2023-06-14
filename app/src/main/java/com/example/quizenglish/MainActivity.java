@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.quizenglish.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -36,15 +35,13 @@ public class MainActivity extends AppCompatActivity {
         userId = auth.getCurrentUser().getUid();
         DocumentReference documentReference = database.collection("users").document(userId);
 
+        // Получаем данные о пользователе
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 binding.userName.setText(documentSnapshot.getString("name") + "!");
             }
         });
-
-
-
 
     }
 

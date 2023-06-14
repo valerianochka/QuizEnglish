@@ -66,7 +66,4 @@
                 android:text="@string/vocabulary_btn"/>
         </LinearLayout>
     </ScrollView>
-
-
-
 </LinearLayout>

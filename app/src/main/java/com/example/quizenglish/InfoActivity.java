@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
 import android.view.View;
-
 import com.example.quizenglish.databinding.ActivityInfoBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -38,6 +37,7 @@ public class InfoActivity extends AppCompatActivity {
         userId = auth.getCurrentUser().getUid();
         DocumentReference documentReference = database.collection("users").document(userId);
 
+        // Получаем данные о пользователе
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {

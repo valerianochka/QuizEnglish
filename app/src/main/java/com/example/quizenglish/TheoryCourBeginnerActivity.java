@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.bumptech.glide.Glide;
-import com.example.quizenglish.adapters.CourseBeginnerAdapter;
 import com.example.quizenglish.databinding.ActivityTheoryCourBeginnerBinding;
 
 public class TheoryCourBeginnerActivity extends AppCompatActivity {

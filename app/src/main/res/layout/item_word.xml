@@ -36,7 +36,4 @@
                 android:text="@string/word_card_ru"/>
         </LinearLayout>
     </LinearLayout>
-
-
-
 </LinearLayout>

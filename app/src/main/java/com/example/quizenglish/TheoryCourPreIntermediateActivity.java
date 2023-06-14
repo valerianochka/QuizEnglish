@@ -1,13 +1,10 @@
 package com.example.quizenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.bumptech.glide.Glide;
-import com.example.quizenglish.databinding.ActivityTheoryCourElementaryBinding;
 import com.example.quizenglish.databinding.ActivityTheoryCourPreIntermediateBinding;
 
 public class TheoryCourPreIntermediateActivity extends AppCompatActivity {
@@ -42,7 +39,7 @@ public class TheoryCourPreIntermediateActivity extends AppCompatActivity {
         TheoryCourPreIntermediateActivity.this.startActivity(intentQuiz);
     }
 
-    // Намерение перейти из TheoryCourElementaryActivity в CoursePreIntermediateActivity
+    // Намерение перейти из TheoryCourPreIntermediateActivity в CoursePreIntermediateActivity
     public void startCourse(View view) {
         startActivity(new Intent(TheoryCourPreIntermediateActivity.this,CoursePreIntermediateActivity.class));
     }

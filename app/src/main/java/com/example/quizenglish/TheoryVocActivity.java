@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import com.example.quizenglish.adapters.WordAdapter;
 import com.example.quizenglish.databinding.ActivityTheoryVocBinding;
-import com.example.quizenglish.models.VocabularyModel;
 import com.example.quizenglish.models.WordModel;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -16,7 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import javax.annotation.Nullable;
-
 public class TheoryVocActivity extends AppCompatActivity {
 
     ActivityTheoryVocBinding binding;
@@ -88,6 +86,7 @@ public class TheoryVocActivity extends AppCompatActivity {
         TheoryVocActivity.this.startActivity(intentQuiz);
     }
 
+    // Намерение перейти из TheoryVocActivity в MainActivity
     public void startVocabulary(View view) {
         startActivity(new Intent(TheoryVocActivity.this,VocabularyActivity.class));
     }

@@ -1,11 +1,9 @@
 package com.example.quizenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.quizenglish.databinding.ActivityCourseBinding;
 
 public class CourseActivity extends AppCompatActivity {
@@ -36,6 +34,7 @@ public class CourseActivity extends AppCompatActivity {
         startActivity(new Intent(CourseActivity.this,CourseElementaryActivity.class));
     }
 
+    // Намерение перейти из CourseActivity в CoursePreIntermediateActivity
     public void startPreIntermediate(View view) {
         startActivity(new Intent(CourseActivity.this,CoursePreIntermediateActivity.class));
     }
